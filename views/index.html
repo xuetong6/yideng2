@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+{% block title %}点赞首页{% endblock %}
+{% block head %}
+{% parent %}
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.js"></script>
+	<!-- 添加方法，为测试做准备 -->
+	<script src="https://cdn.bootcss.com/systemjs/0.21.0/system.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.17.1/axios.js"></script>
+    <script src="../js/add.js"></script>
+{% endblock %}
+{% block content %}
+    <div class="hand" id="thumb">
+		<div class="finger"></div>
+		<div class="finger"></div>
+		<div class="finger"></div>
+		<div class="finger"></div>
+		<div class="finger thumb"></div>
+		<div class="arm"></div>
+	</div>
+	<span class="hide" id="animation">+1</span>
+	<script>
+	  //配置systemjs引用路径
+	  SystemJS.config({  
+	  	baseURL:'/js'
+	  })
+	  SystemJS.import('index-es.js').then(function(m){
+          $.extend({ //将Thumb挂在到jquery上面
+          	thumb:m.default.Thumb
+          })
+          callBack();
+      });
+      function callBack(){
+      	let q = new $.thumb(0,$('#thumb'));
+        q.clickAction();
+      } 
+	</script> 
+{% endblock %}

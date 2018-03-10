@@ -1,0 +1,23 @@
+body{background: radial-gradient(ellipse at top left, #94D28A 0%, #D0D8CB 57%);}
+.hand{width: 250px; height: 300px; position: relative; background:#f3c5ad; border: 1px solid #8c3e15; margin: 200px auto; border-radius: 30px;}
+.hand .arm{width: 200px; height: 150px; position: absolute; left: -190px; top: 75px; background:#f3c5ad; border-top:1px solid #8c3e15;}
+.hand .finger{width: 75px; height: 75px; position: absolute; right: -44px;background:#f3c5ad; border-radius: 0px 75px 75px 0px; border:1px solid #8c3e15;border-left: 0; top: -1px;}
+.hand .finger:nth-of-type(2){top: 74px;}
+.hand .finger:nth-of-type(3){top: 149px;}
+.hand .finger:nth-of-type(4){top: 224px;}
+.hand .finger:nth-of-type(5){top: -80px; left:5px;}
+.hand .finger.thumb{transform: rotate(-65deg); width: 140px; border-bottom:0;}
+.hand .finger:before{content: ''; display:block; width: 80%; height: 60px; position: absolute; top: 8%; right: 5%; border-radius: 0px 75px 75px 0px; background: linear-gradient(to left, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%);}
+.hide{display: none}
+.num{display: block!important;-webkit-animation: neon2 1.5s ease-in-out alternate;animation: neon2 1.5s ease-in-out alternate;-webkit-animation-iteration-count: 1; font-size: 40px; right: 30%; top: 20%; color: #f00; position: absolute;}
+ @-webkit-keyframes neon2 {
+        from {
+            opacity: 0;
+            -webkit-transform: translateY(-20px);
+            text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177;
+        }
+        to {
+            opacity: 1;
+            -webkit-transform: translateY(0) text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177;
+        }
+    }
